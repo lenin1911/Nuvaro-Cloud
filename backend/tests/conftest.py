@@ -12,11 +12,16 @@ settings.DATABASE_URL = TEST_DB_URL
 settings.USE_LOCAL_STORAGE = True
 settings.LOCAL_STORAGE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "test_uploads")
 
+from sqlalchemy.pool import NullPool
 from backend.database.connection import Base, get_db
 from backend.main import app
 
-# Create test engine and sessions
-engine = create_engine(TEST_DB_URL, connect_args={"check_same_thread": False})
+# Create test engine and sessions with connection pooling disabled (NullPool)
+engine = create_engine(
+    TEST_DB_URL, 
+    connect_args={"check_same_thread": False},
+    poolclass=NullPool
+)
 TestingSessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 @pytest.fixture(scope="session", autouse=True)
@@ -31,6 +36,12 @@ def setup_test_db():
     yield
     # Cleanup DB and uploads after all tests finish
     Base.metadata.drop_all(bind=engine)
+    engine.dispose()
+    
+    # Dispose the main app engine as it holds connections inside TestClient process scope
+    from backend.database.connection import engine as main_engine
+    main_engine.dispose()
+
     if os.path.exists(TEST_DB_URL.replace("sqlite:///", "")):
         os.remove(TEST_DB_URL.replace("sqlite:///", ""))
     if os.path.exists(settings.LOCAL_STORAGE_DIR):
