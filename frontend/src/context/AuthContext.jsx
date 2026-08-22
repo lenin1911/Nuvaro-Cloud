@@ -1,5 +1,6 @@
 import React, { createContext, useState, useEffect, useContext } from 'react';
-import api from '../services/api';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import { auth } from '../firebase';
 
 const AuthContext = createContext(null);
 
@@ -7,70 +8,37 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const fetchProfile = async () => {
-    try {
-      const response = await api.get('/profile');
-      setUser(response.data);
-    } catch (error) {
-      console.error('Failed to load profile:', error);
-      localStorage.removeItem('token');
-      setUser(null);
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  // Subscribe to Firebase Authentication state
   useEffect(() => {
-    const token = localStorage.getItem('token');
-    if (token) {
-      fetchProfile();
-    } else {
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        // Ensure username is accessible for UI components expecting user.username
+        firebaseUser.username =
+          firebaseUser.displayName ||
+          (firebaseUser.email ? firebaseUser.email.split('@')[0] : 'User');
+        setUser(firebaseUser);
+      } else {
+        setUser(null);
+      }
       setLoading(false);
-    }
+    });
+
+    return () => unsubscribe();
   }, []);
 
-  const login = async (usernameOrEmail, password) => {
-    setLoading(true);
+  // Firebase Sign Out
+  const logout = async () => {
     try {
-      const response = await api.post('/login', {
-        username_or_email: usernameOrEmail,
-        password,
-      });
-      const { access_token } = response.data;
-      localStorage.setItem('token', access_token);
-      await fetchProfile();
-      return true;
+      await signOut(auth);
+      setUser(null);
     } catch (error) {
-      console.error('Login error:', error);
-      setLoading(false);
+      console.error('Error signing out:', error);
       throw error;
     }
-  };
-
-  const register = async (username, email, password) => {
-    setLoading(true);
-    try {
-      await api.post('/register', {
-        username,
-        email,
-        password,
-      });
-      setLoading(false);
-      return true;
-    } catch (error) {
-      console.error('Registration error:', error);
-      setLoading(false);
-      throw error;
-    }
-  };
-
-  const logout = () => {
-    localStorage.removeItem('token');
-    setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, logout }}>
       {children}
     </AuthContext.Provider>
   );

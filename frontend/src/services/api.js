@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const api = axios.create({
   baseURL: API_URL,
@@ -9,7 +9,7 @@ const api = axios.create({
   },
 });
 
-// Request interceptor to attach JWT token
+// Request interceptor — kept for future backend JWT integration
 api.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
@@ -23,19 +23,16 @@ api.interceptors.request.use(
   }
 );
 
-// Response interceptor to handle unauthorized errors
+// Response interceptor — only log errors, never force a page reload.
+// Firebase onAuthStateChanged is the source of truth for auth state;
+// a failed API call should not trigger a navigation side-effect.
 api.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
+    const status = error.response?.status;
+    if (status === 401) {
+      // Silently clear any stale legacy token — do NOT redirect or reload
       localStorage.removeItem('token');
-      // If we are not on login/register pages, redirect to login
-      if (
-        window.location.pathname !== '/login' && 
-        window.location.pathname !== '/register'
-      ) {
-        window.location.href = '/login';
-      }
     }
     return Promise.reject(error);
   }
