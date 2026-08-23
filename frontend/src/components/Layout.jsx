@@ -51,7 +51,7 @@ const Layout = ({ children }) => {
     <div className="min-h-screen flex flex-col md:flex-row relative z-10 text-slate-800 dark:text-slate-200 transition-colors duration-500">
       
       {/* Mobile Top Navbar (Glassmorphic) */}
-      <div className="md:hidden flex items-center justify-between bg-white/70 dark:bg-[#0b1329]/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/40 px-4 py-3 z-30">
+      <div className="md:hidden flex items-center justify-between bg-white/70 dark:bg-[#080808]/70 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/40 px-4 py-3 z-30">
         <div className="flex items-center space-x-2">
           <HardDrive className="h-6 w-6 text-brand-600 dark:text-brand-500" />
           <span className="text-lg font-black bg-gradient-to-r from-brand-600 to-indigo-600 dark:from-brand-400 dark:to-indigo-400 bg-clip-text text-transparent font-outfit">

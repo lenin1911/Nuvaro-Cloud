@@ -99,7 +99,7 @@ const Login = () => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, ease: 'easeOut' }}
-        className="relative w-full max-w-md bg-white/70 dark:bg-[#0b1329]/65 backdrop-blur-2xl border border-slate-200/40 dark:border-slate-800/40 rounded-[28px] p-8 md:p-10 shadow-2xl shadow-slate-200/40 dark:shadow-black/50"
+        className="relative w-full max-w-md bg-white/70 dark:bg-[#080808]/65 backdrop-blur-2xl border border-slate-200/40 dark:border-slate-800/40 rounded-[28px] p-8 md:p-10 shadow-2xl shadow-slate-200/40 dark:shadow-black/50"
       >
 
         {/* Header Logo */}
@@ -198,7 +198,7 @@ const Login = () => {
             <div className="w-full border-t border-slate-200/80 dark:border-slate-800/80" />
           </div>
           <div className="relative flex justify-center text-xs uppercase">
-            <span className="bg-white/80 dark:bg-[#0b1329] px-3 text-slate-400 dark:text-slate-500 font-semibold tracking-wider backdrop-blur-sm">
+            <span className="bg-white/80 dark:bg-[#080808] px-3 text-slate-400 dark:text-slate-500 font-semibold tracking-wider backdrop-blur-sm">
               Or continue with
             </span>
           </div>

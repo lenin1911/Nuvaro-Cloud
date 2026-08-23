@@ -19,7 +19,7 @@ const Settings = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
-          className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm space-y-4"
+          className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm space-y-4"
         >
           <div className="flex items-center space-x-3 pb-3 border-b border-slate-200/40 dark:border-slate-800/30">
             <Server className="h-5 w-5 text-brand-600 dark:text-brand-400" />
@@ -46,7 +46,7 @@ const Settings = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.05 }}
-          className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm space-y-4"
+          className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm space-y-4"
         >
           <div className="flex items-center space-x-3 pb-3 border-b border-slate-200/40 dark:border-slate-800/30">
             <HardDrive className="h-5 w-5 text-brand-600 dark:text-brand-400" />
@@ -73,7 +73,7 @@ const Settings = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3, delay: 0.1 }}
-          className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm space-y-4"
+          className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm space-y-4"
         >
           <div className="flex items-center space-x-3 pb-3 border-b border-slate-200/40 dark:border-slate-800/30">
             <Bell className="h-5 w-5 text-brand-600 dark:text-brand-400" />

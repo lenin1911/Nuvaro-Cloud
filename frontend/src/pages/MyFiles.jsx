@@ -170,7 +170,7 @@ const MyFiles = () => {
       )}
 
       {/* Filter panel */}
-      <div className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 p-5 rounded-[24px] grid grid-cols-1 md:grid-cols-4 gap-4 items-center shadow-sm">
+      <div className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 p-5 rounded-[24px] grid grid-cols-1 md:grid-cols-4 gap-4 items-center shadow-sm">
         
         {/* Search */}
         <div className="relative md:col-span-2 group">
@@ -230,7 +230,7 @@ const MyFiles = () => {
           <Loader className="h-8 w-8 text-brand-600 dark:text-brand-500 animate-spin" />
         </div>
       ) : files.length === 0 ? (
-        <div className="flex flex-col items-center justify-center py-20 text-slate-455 dark:text-slate-400 bg-white/45 dark:bg-[#0b1329]/30 border border-slate-200/50 dark:border-slate-800/40 rounded-3xl shadow-sm border-dashed">
+        <div className="flex flex-col items-center justify-center py-20 text-slate-455 dark:text-slate-400 bg-white/45 dark:bg-[#080808]/30 border border-slate-200/50 dark:border-slate-800/40 rounded-3xl shadow-sm border-dashed">
           <AlertCircle className="h-12 w-12 stroke-[1.5] mb-2 text-slate-350 dark:text-slate-500" />
           <p className="text-sm">No files found matching criteria.</p>
         </div>
@@ -246,7 +246,7 @@ const MyFiles = () => {
               layout
               key={file.id}
               whileHover={{ y: -3, boxShadow: '0 12px 30px -10px rgba(0, 0, 0, 0.06)' }}
-              className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-5 transition-all duration-200 group flex flex-col justify-between h-48 relative shadow-sm"
+              className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-5 transition-all duration-200 group flex flex-col justify-between h-48 relative shadow-sm"
             >
               <div className="flex justify-between items-start">
                 <div className="bg-white/60 dark:bg-slate-900/60 border border-slate-200/40 dark:border-slate-800/35 p-3 rounded-2xl">
@@ -353,7 +353,7 @@ const MyFiles = () => {
       ) : (
         
         /* List Layout */
-        <div className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] overflow-x-auto shadow-sm">
+        <div className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] overflow-x-auto shadow-sm">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-slate-200/50 dark:border-slate-800/40 text-xs font-bold text-slate-455 dark:text-slate-400 uppercase tracking-wider">

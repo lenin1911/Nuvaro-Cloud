@@ -19,7 +19,7 @@ const Profile = () => {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ type: 'spring', stiffness: 260, damping: 25 }}
-        className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm relative overflow-hidden"
+        className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm relative overflow-hidden"
       >
         <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl" />
         

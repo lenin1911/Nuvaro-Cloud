@@ -138,7 +138,7 @@ const Dashboard = () => {
         <motion.div 
           variants={itemVariants}
           whileHover={{ y: -3, boxShadow: '0 12px 30px -10px rgba(0, 0, 0, 0.08)' }}
-          className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[24px] p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group transition-all"
+          className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[24px] p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group transition-all"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-brand-500/5 rounded-full blur-2xl group-hover:bg-brand-500/10 transition-all duration-350" />
           <div className="flex items-center justify-between mb-4">
@@ -173,7 +173,7 @@ const Dashboard = () => {
         <motion.div 
           variants={itemVariants}
           whileHover={{ y: -3, boxShadow: '0 12px 30px -10px rgba(0, 0, 0, 0.08)' }}
-          className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[24px] p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group transition-all"
+          className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[24px] p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group transition-all"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-indigo-500/5 rounded-full blur-2xl group-hover:bg-indigo-500/10 transition-all duration-350" />
           <div className="flex items-center justify-between mb-4">
@@ -196,7 +196,7 @@ const Dashboard = () => {
         <motion.div 
           variants={itemVariants}
           whileHover={{ y: -3, boxShadow: '0 12px 30px -10px rgba(0, 0, 0, 0.08)' }}
-          className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[24px] p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group transition-all"
+          className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[24px] p-6 flex flex-col justify-between shadow-sm relative overflow-hidden group transition-all"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/5 rounded-full blur-2xl group-hover:bg-emerald-500/10 transition-all duration-350" />
           <div className="flex items-center justify-between mb-4">
@@ -221,7 +221,7 @@ const Dashboard = () => {
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.4 }}
-        className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm"
+        className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 shadow-sm"
       >
         <div className="flex items-center justify-between mb-6">
           <div>

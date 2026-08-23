@@ -8,7 +8,7 @@ const CloudBackground = () => {
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden select-none">
       {/* Dynamic Background Sky Gradients (Light / Dark Mode) */}
       <div 
-        className="absolute inset-0 transition-all duration-1000 dark:bg-gradient-to-tr dark:from-[#090d16] dark:via-[#0b1329] dark:to-[#17153b]" 
+        className="absolute inset-0 transition-all duration-1000 dark:bg-gradient-to-tr dark:from-[#000000] dark:via-[#080808] dark:to-[#0d0d0d]" 
         style={{
           background: isDark 
             ? undefined 

@@ -144,7 +144,7 @@ const UploadPage = () => {
         </motion.div>
       )}
 
-      <form onSubmit={handleUploadSubmit} className="bg-white/45 dark:bg-[#0b1329]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm">
+      <form onSubmit={handleUploadSubmit} className="bg-white/45 dark:bg-[#080808]/30 backdrop-blur-md border border-white/30 dark:border-slate-800/40 rounded-[28px] p-6 md:p-8 space-y-6 shadow-sm">
         
         {/* File Dropzone */}
         <motion.div

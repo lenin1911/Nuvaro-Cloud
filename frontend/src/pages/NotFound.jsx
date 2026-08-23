@@ -11,7 +11,7 @@ const NotFound = () => {
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ type: 'spring', stiffness: 260, damping: 25 }}
-        className="relative z-10 max-w-md bg-white/70 dark:bg-[#0b1329]/65 backdrop-blur-2xl border border-slate-200/40 dark:border-slate-800/40 rounded-[28px] p-8 md:p-10 shadow-2xl text-center space-y-6"
+        className="relative z-10 max-w-md bg-white/70 dark:bg-[#080808]/65 backdrop-blur-2xl border border-slate-200/40 dark:border-slate-800/40 rounded-[28px] p-8 md:p-10 shadow-2xl text-center space-y-6"
       >
         <motion.div 
           animate={{ y: [0, -6, 0] }}
